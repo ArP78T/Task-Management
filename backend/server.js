@@ -11,7 +11,10 @@ const taskApi=require('./routes/Route')
 
 app.use('/api', userApi)
 app.use('/api', taskApi)
-app.use(cors())
+app.use(cors({
+  origin: "https://task-management-frontend-u3mr.onrender.com", 
+  credentials: true
+}));
 
 app.listen(`${process.env.PORT}`, () => {
     console.log(`Server is started PORT=${process.env.PORT}`);
