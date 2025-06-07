@@ -15,7 +15,7 @@ function Register() {
     let registerHandle = async (e) => {
         try {
             e.preventDefault();
-            let response = await axios.post("http://localhost:8000/api/register", data)
+            let response = await axios.post("https://task-management-1r57.onrender.com/api/register", data)
             alert(response.data.success)
             navigate('/login')
         } catch (error) {

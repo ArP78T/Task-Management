@@ -3,7 +3,7 @@ function TaskCard({ task, setFlag,flag}) {
   let deleteHandle = async (id) => {
     try {
     let token=localStorage.getItem("token")
-  let res = await axios.delete(`http://localhost:8000/api/deleteTask/${id}`, {
+  let res = await axios.delete(`https://task-management-1r57.onrender.com/api/deleteTask/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -37,7 +37,7 @@ function TaskCard({ task, setFlag,flag}) {
 
       <p className="text-sm text-zinc-500 text-start">{task.description}</p>
 
-      {/* ✏️ Edit Button */}
+      {/* ✏️ Delete Button */}
       <div className="text-right mt-2">
         <button
          onClick={()=>deleteHandle(task._id)}

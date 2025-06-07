@@ -17,7 +17,7 @@ function AddTask({ setAddTaskDiv,setflag,flag }) {
       e.preventDefault();
   try {
       const token = localStorage.getItem("token");
-    const response = await axios.post("http://localhost:8000/api/addTask", formData, {
+    const response = await axios.post("https://task-management-1r57.onrender.com/api/addTask", formData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

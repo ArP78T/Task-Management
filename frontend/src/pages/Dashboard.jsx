@@ -26,7 +26,7 @@ function Dashboard() {
     const fetchUserDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:8000/api/userDetail", {
+        const res = await axios.get("https://task-management-1r57.onrender.com/api/userDetail", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
