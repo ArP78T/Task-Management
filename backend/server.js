@@ -7,7 +7,7 @@ require('dotenv').config();
 require('./connection/Conn')
 const userApi = require('./routes/Route')
 const taskApi=require('./routes/Route')
-
+const PORT = process.env.PORT || 8000;
 
 app.use('/api', userApi)
 app.use('/api', taskApi)
@@ -16,6 +16,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.listen(`${process.env.PORT}`, () => {
+app.listen(PORT, () => {
     console.log(`Server is started PORT=${process.env.PORT}`);
 })
