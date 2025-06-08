@@ -13,16 +13,17 @@ app.use(express.json());
 mongoose.connect("mongodb+srv://arpit:dixit@cluster0.okboxsq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then
 (()=>console.log("Connect"))
 
+app.use(cors({
+  origin: "https://task-management-frontend-u3mr.onrender.com", // your frontend domain
+  credentials: true
+}));
+
 
 app.use('/api', userApi)
 app.use('/api', taskApi)
 require('./connection/Conn');
 
 
-app.use(cors({
-  origin: "https://task-management-frontend-u3mr.onrender.com", // your frontend domain
-  credentials: true
-}));
 
 
 app.listen(PORT, () => {
